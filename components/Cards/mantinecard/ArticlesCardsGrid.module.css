@@ -1,0 +1,24 @@
+.card {
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+
+      height: 400px;
+      width: 400px;
+      background-color: green;
+
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: var(--mantine-shadow-md);
+    }
+  }
+  
+  .title {
+    font-family: 'Greycliff CF', var(--mantine-font-family);
+    font-weight: bold;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 30px;
+  }
