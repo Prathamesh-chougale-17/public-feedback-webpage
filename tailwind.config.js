@@ -12,6 +12,9 @@ module.exports = {
     current: "currentColor",
     extend: {
       colors: {
+        fontFamily: {
+          sans: ["var(--font-sans)", ...fontFamily.sans],
+        },
         // light mode
         tremor: {
           brand: {

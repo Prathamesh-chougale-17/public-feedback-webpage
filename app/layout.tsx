@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@mantine/core/styles.css";
+import { Inter as FontSans } from "next/font/google";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import "./globals.css";
 import { HeaderSearch } from "@/components/HeaderSearch";
@@ -9,9 +8,11 @@ import ReactChatbot from "@/components/Chatbot/ReactChatbot";
 import Chatbot from "@/components/Chatbot/Chatbot";
 import { FooterLinks } from "@/components/Footer/FooterLinks";
 
-
-const inter = Inter({ subsets: ["latin"] });
-
+import { cn } from "@/lib/utils";
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 export const metadata: Metadata = {
   title: "Police Feedback",
   description: "Made to help police officers get feedback from the public",
@@ -27,7 +28,12 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <Provider>
           <MantineProvider>
             <HeaderSearch />
